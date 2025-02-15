@@ -19,7 +19,7 @@ const Register = () => {
         role,
       });
       alert("Registration successful! Please login.");
-      navigate("/login");
+      navigate("/");
     } catch (err) {
       console.error("Registration failed:", err.response?.data);
     }
