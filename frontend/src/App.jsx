@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./pages/register";
+import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
 import AuthProvider from "./context/AuthContext";
 
