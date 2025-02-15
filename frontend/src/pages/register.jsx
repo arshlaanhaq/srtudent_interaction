@@ -8,6 +8,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("student"); 
   const navigate = useNavigate();
+  const [error, setError] = useState("");
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -21,7 +22,8 @@ const Register = () => {
       alert("Registration successful! Please login.");
       navigate("/");
     } catch (err) {
-      console.error("Registration failed:", err.response?.data);
+    //   console.error("Registration failed:", err.response?.data);
+    setError(error.response?.data?.message || "Registration failed");
     }
   };
 
@@ -29,6 +31,7 @@ const Register = () => {
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <form onSubmit={handleRegister} className="w-full max-w-sm bg-white p-6 shadow-lg rounded-lg">
         <h2 className="text-2xl font-bold mb-4 text-center">Register</h2>
+        {error && <p className="text-red-500">{error}</p>}
 
         <input
           type="text"
